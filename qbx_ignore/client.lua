@@ -27,11 +27,13 @@ CreateThread(function() -- all these should only need to be called once
         StartAudioScene('CHARACTER_CHANGE_IN_SKY_SCENE')
     end
     SetAudioFlag('PoliceScannerDisabled', true)
-    SetGarbageTrucks(false)
-    SetCreateRandomCops(false)
-    SetCreateRandomCopsNotOnScenarios(false)
-    SetCreateRandomCopsOnScenarios(false)
-    DistantCopCarSirens(false)
+    SetRandomTrains(config.enable.train)
+    SetRandomBoats(config.enable.boat)
+    SetGarbageTrucks(config.enable.garbage)
+    SetCreateRandomCops(config.enable.policenpc)
+    SetCreateRandomCopsNotOnScenarios(config.enable.policenpc)
+    SetCreateRandomCopsOnScenarios(config.enable.policenpc)
+    DistantCopCarSirens(config.enable.policenpc)
     SetFarDrawVehicles(false)
     RemoveVehiclesFromGeneratorsInArea(335.2616 - 300.0, -1432.455 - 300.0, 46.51 - 300.0, 335.2616 + 300.0, -1432.455 + 300.0, 46.51 + 300.0) -- central los santos medical center
     RemoveVehiclesFromGeneratorsInArea(441.8465 - 500.0, -987.99 - 500.0, 30.68 -500.0, 441.8465 + 500.0, -987.99 + 500.0, 30.68 + 500.0) -- police station mission row

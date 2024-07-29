@@ -8,5 +8,8 @@ return {
 
         -- False disables ammo display
         displayAmmo = true,
+        
+        -- Disable blue red during wanted on map
+        policeBlueRed = true
     }
 }

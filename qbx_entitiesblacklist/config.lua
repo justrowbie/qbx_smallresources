@@ -1,4 +1,5 @@
 return {
+    useClientScript = true,
     blacklisted = {
         [`SHAMAL`] = true,
         [`LUXOR`] = true,

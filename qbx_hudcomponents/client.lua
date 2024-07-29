@@ -2,6 +2,7 @@ local config = require 'qbx_hudcomponents.config'
 local disableHudComponents = config.disable.hudComponents
 local disableControls = config.disable.controls
 local displayAmmo = config.disable.displayAmmo
+local disableBlueRed = config.disable.policeBlueRed
 
 CreateThread(function()
     while true do
@@ -13,6 +14,13 @@ CreateThread(function()
         for i = 1, #disableControls do
             DisableControlAction(2, disableControls[i], true)
         end
+        
+        if disableBlueRed then
+        	ReplaceHudColourWithRgba(9, 140, 140, 140, 255)
+			ReplaceHudColourWithRgba(6, 140, 140, 140, 255)
+			ReplaceHudColourWithRgba(25, 53, 154, 71, 255)
+			ReplaceHudColourWithRgba(26, 235, 36, 39, 255)
+		end
 
         DisplayAmmoThisFrame(displayAmmo)
         Wait(0)
