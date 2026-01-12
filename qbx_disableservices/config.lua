@@ -1,5 +1,5 @@
 return {
-    maxWantedLevel = 3,
+    maxWantedLevel = 5,
     disableAmmunation = true,
     disableVanilla = true,
     enabledServices = {

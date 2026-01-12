@@ -12,6 +12,7 @@ CreateThread(function()
         for _, scgrp in next, config.blacklisted.scenarioGroups do
             SetScenarioGroupEnabled(scgrp, false)
         end
+        SetDispatchCopsForPlayer(cache.playerId, config.enable.policenpc)
         Wait(10000)
     end
 end)
@@ -24,16 +25,19 @@ end)
 
 CreateThread(function() -- all these should only need to be called once
     if config.disable.ambience then
+        StartAudioScene('DLC_MPHEIST_TRANSITION_TO_APT_FADE_IN_RADIO_SCENE')
+        StartAudioScene('FBI_HEIST_H5_MUTE_AMBIENCE_SCENE')
         StartAudioScene('CHARACTER_CHANGE_IN_SKY_SCENE')
     end
     SetAudioFlag('PoliceScannerDisabled', true)
+    SetAudioFlag('DisableFlightMusic', true)
     SetRandomTrains(config.enable.train)
     SetRandomBoats(config.enable.boat)
     SetGarbageTrucks(config.enable.garbage)
     SetCreateRandomCops(config.enable.policenpc)
     SetCreateRandomCopsNotOnScenarios(config.enable.policenpc)
     SetCreateRandomCopsOnScenarios(config.enable.policenpc)
-    DistantCopCarSirens(config.enable.policenpc)
+    DistantCopCarSirens(false)
     SetFarDrawVehicles(false)
     RemoveVehiclesFromGeneratorsInArea(335.2616 - 300.0, -1432.455 - 300.0, 46.51 - 300.0, 335.2616 + 300.0, -1432.455 + 300.0, 46.51 + 300.0) -- central los santos medical center
     RemoveVehiclesFromGeneratorsInArea(441.8465 - 500.0, -987.99 - 500.0, 30.68 -500.0, 441.8465 + 500.0, -987.99 + 500.0, 30.68 + 500.0) -- police station mission row

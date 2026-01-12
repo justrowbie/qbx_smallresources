@@ -3,6 +3,7 @@ local disableHudComponents = config.disable.hudComponents
 local disableControls = config.disable.controls
 local displayAmmo = config.disable.displayAmmo
 local disableBlueRed = config.disable.policeBlueRed
+local disableVehRadio = config.disable.vehicleRadio
 
 CreateThread(function()
     while true do
@@ -16,12 +17,17 @@ CreateThread(function()
         end
         
         if disableBlueRed then
+            SetPoliceRadarBlips(false)
         	ReplaceHudColourWithRgba(9, 140, 140, 140, 255)
 			ReplaceHudColourWithRgba(6, 140, 140, 140, 255)
 			ReplaceHudColourWithRgba(25, 53, 154, 71, 255)
 			ReplaceHudColourWithRgba(26, 235, 36, 39, 255)
 		end
 
+        if disableVehRadio then
+            SetVehicleRadioEnabled(cache.vehicle, false)
+        end
+        
         DisplayAmmoThisFrame(displayAmmo)
         Wait(0)
     end

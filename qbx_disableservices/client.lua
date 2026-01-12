@@ -5,7 +5,6 @@ CreateThread(function()
     for key, value in ipairs(config.enabledServices) do
         EnableDispatchService(key, value)
     end
-    SetDispatchCopsForPlayer(cache.playerId, false)
     if config.disableAmmunation then
         ClearAmbientZoneState("collision_ybmrar", false)
         SetAmbientZoneState("collision_ybmrar", false, false)
