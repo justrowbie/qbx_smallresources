@@ -27,8 +27,13 @@ CreateThread(function()
         if disableVehRadio then
             SetVehicleRadioEnabled(cache.vehicle, false)
         end
+
+        if cache.weapon == `WEAPON_FIREEXTINGUISHER` or cache.weapon == `WEAPON_PETROLCAN` then
+            DisplayAmmoThisFrame(false)
+        else
+            DisplayAmmoThisFrame(displayAmmo)
+        end
         
-        DisplayAmmoThisFrame(displayAmmo)
         Wait(0)
     end
 end)

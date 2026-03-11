@@ -110,9 +110,9 @@ local recoils = {
     [`weapon_flare`] = { damageModifier = 0.01, disableCritical = true, recoil = 0.5, shake = 0.05 },
 
     -- Miscellaneous
-    [`weapon_petrolcan`] = { damageModifier = 0.01, disableCritical = true, recoil = 0.5, shake = 0.05 },
-    [`weapon_hazardcan`] = { damageModifier = 0.01, disableCritical = true, recoil = 0.5, shake = 0.05 },
-    [`weapon_fireextinguisher`] = { damageModifier = 0.0, disableCritical = true, recoil = 0.5, shake = 0.05 },
+    [`weapon_petrolcan`] = { damageModifier = 0.0, disableCritical = true, recoil = 0.0, shake = 0.0 },
+    [`weapon_hazardcan`] = { damageModifier = 0.0, disableCritical = true, recoil = 0.0, shake = 0.0 },
+    [`weapon_fireextinguisher`] = { damageModifier = 0.0, disableCritical = true, recoil = 0.0, shake = 0.0 },
 }
 
 return recoils
